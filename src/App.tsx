@@ -4,6 +4,7 @@ import './App.css';
 // import SchoolList from './components/SchoolList';
 // import Welcome from './components/Welcome';
 
+// this allows typescript to understand the data
 interface Team {
   tid: number;
   cid: number;
@@ -18,6 +19,7 @@ interface Team {
   longitude: number;
 }
 
+// allll the data
 const data = {
   "teams": [
     {"tid": 159, "cid": 0, "did": 0, "school": "Boston College", "name": "Eagles", "abbrev": "BC", "pop": 161, "city": "Chestnut Hill", "state": "MA", "latitude": 42.330, "longitude": -71.166},
@@ -344,7 +346,7 @@ const data = {
 };
 
 const schoolInfo: Team[] = data.teams;
-
+// allows typescript to understand the props!
 interface SchoolProps {
   tid: number;
   cid: number;
@@ -358,7 +360,7 @@ interface SchoolProps {
   latitude: number;
   longitude: number;
 }
-
+// the school component that holds the information for the card
 class School extends React.Component<SchoolProps> {
   render() {
     const { school, name, city, state } = this.props;
@@ -373,12 +375,14 @@ class School extends React.Component<SchoolProps> {
   }
 }
 
+// the header component introducing the user to what the site is
 function Welcome() {
   return (
     <h1>Hi, here's a list of the NCAA Teams</h1>
   );
 }
 
+// list of team cards that shows all the teams on the list.
 function SchoolList() {
   return (
     <div>
